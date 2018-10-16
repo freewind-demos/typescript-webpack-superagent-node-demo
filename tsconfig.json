@@ -9,6 +9,6 @@
     "sourceMap": true
   },
   "files": [
-    "hello.ts"
+    "server.ts"
   ]
 }

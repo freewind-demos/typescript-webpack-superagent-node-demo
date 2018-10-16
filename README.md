@@ -1,19 +1,30 @@
-TypeScript tsconfig.json Demo
-============================
+TypeScript Express Demo
+=======================
 
-`tsconfig.json`是typescript项目的说明文件，指定`tsc`所需要的各个参数。
+Write express code in typescript.
 
 ```
 npm install
-npm run tsc
-```
-
-或者使用`ts-node`:
-
-```
 npm run demo
 ```
 
-Resources
----------
-- tsconfig详解：<https://www.typescriptlang.org/docs/handbook/tsconfig-json.html>
+Then visit <http://localhost:3000/typescript>, you will see `Hello, typescript`.
+
+My question is:
+
+I've already set:
+
+```
+"noImplicitAny": true,
+```
+
+in `tsconfig.json`, but in the `server.ts`, I didn't specify the type for `req` and `res`,
+but typescript doesn't report any errors:
+
+```
+app.get('/:name', (req, res) => {
+   ...
+})
+```
+
+Why?
