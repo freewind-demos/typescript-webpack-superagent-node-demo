@@ -1,30 +1,36 @@
-TypeScript Express Demo
-=======================
+TypeScript Superagent Cookies Demo
+==================================
 
-Write express code in typescript.
+Run server and client:
 
 ```
 npm install
-npm run demo
+npm run server
+npm run client
 ```
 
-Then visit <http://localhost:3000/typescript>, you will see `Hello, typescript`.
+### Log
 
-My question is:
-
-I've already set:
+Server side:
 
 ```
-"noImplicitAny": true,
+listen on http://localhost:3000
+{ host: 'localhost:3000',
+  'accept-encoding': 'gzip, deflate',
+  'user-agent': 'node-superagent/4.1.0',
+  cookie: 'a1; a2; a3',
+  'non-cookie': 'a1, a2, a3',
+  connection: 'close' }
 ```
 
-in `tsconfig.json`, but in the `server.ts`, I didn't specify the type for `req` and `res`,
-but typescript doesn't report any errors:
+Client side:
 
 ```
-app.get('/:name', (req, res) => {
-   ...
-})
+Cookies: [ 'xxx=j%3A%5B%22x1%22%2C%22x2%22%2C%22x3%22%5D; Path=/',
+  'yyy=j%3A%5B%22y1%22%2C%22y2%22%2C%22y3%22%5D; Path=/' ]
 ```
 
-Why?
+We can see:
+
+1. superagent has special handling when sending `cookie`
+2. `Set-Cookie` header is different from other headers
