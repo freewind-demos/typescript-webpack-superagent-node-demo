@@ -26,6 +26,7 @@ listen on http://localhost:3000
 Client side:
 
 ```
+array?  true
 Cookies: [ 'xxx=j%3A%5B%22x1%22%2C%22x2%22%2C%22x3%22%5D; Path=/',
   'yyy=j%3A%5B%22y1%22%2C%22y2%22%2C%22y3%22%5D; Path=/' ]
 ```
